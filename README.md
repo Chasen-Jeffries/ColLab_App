@@ -2,10 +2,11 @@
 ColLab is an application designed to boost collaborative research by creating a bulletin board style website where students and faculty can post ideas for projects, research, and articles that they are interested in collaborating on. It uses python to access the data for each post within a repository as well as allow users to create new posts that are added to the repository. Users can browse posts based on school, department, or key-word or they can use a search function to lookup specific ideas or topics. The application will provide the information in a user-friendly manner, likely a bulletin board style. Finally, users can create a simple profile with relevant information that allows establishing connections (friending or following). 
 
 ### Project Requirements expressed as user stories: 
-- 	As a user, I want to be able to post my research ideas that I would like to work on collaboratively. I want to be able to highlight my research design and the type of collaboration desired. (i.e. data help, domain expertise, etc)
+- 	As a user, I want to be able to post my research ideas that I would like to work on collaboratively. 
+ - I want to be able to highlight my research design and the type of collaboration desired. (i.e. data help, domain expertise, etc)
 - 	As a user, I want to be able to browse and search other collaborative research ideas that I align with my interests and skills. 
-- - 	Browse based on department, field, or keywords
-- - 	Search based on topic, keyword, or field. 
+ - 	Browse based on department, field, or keywords
+ - 	Search based on topic, keyword, or field. 
 - As a user, I want to be able to connect with and talk to potential collaborators.
 - As a user, I want an easy-to-use interface that can be used with minimal experience.  
 
