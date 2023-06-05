@@ -3,10 +3,10 @@ ColLab is an application designed to boost collaborative research by creating a 
 
 ### Project Requirements expressed as user stories: 
 - 	As a user, I want to be able to post my research ideas that I would like to work on collaboratively. 
- - I want to be able to highlight my research design and the type of collaboration desired. (i.e. data help, domain expertise, etc)
+  - I want to be able to highlight my research design and the type of collaboration desired. (i.e. data help, domain expertise, etc)
 - 	As a user, I want to be able to browse and search other collaborative research ideas that I align with my interests and skills. 
- - 	Browse based on department, field, or keywords
- - 	Search based on topic, keyword, or field. 
+  - 	Browse based on department, field, or keywords
+  - 	Search based on topic, keyword, or field. 
 - As a user, I want to be able to connect with and talk to potential collaborators.
 - As a user, I want an easy-to-use interface that can be used with minimal experience.  
 
