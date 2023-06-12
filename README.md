@@ -44,10 +44,10 @@ ColLab is an application designed to boost collaborative research by creating a 
 - Frontend site
 - Backend database
 - User profile
-- User connection
+- Posting ideas
+- Browsing page
 
 #### Iteration 1:
-
 1. As a user, I want to be able to create and log in to my profile. 
 - Front end user interface for sign-up and login (*Name*)
 - Back end API for login (*Name*)
@@ -60,23 +60,24 @@ ColLab is an application designed to boost collaborative research by creating a 
 - Storing and access posts on profile pages (*Name*)
 
 #### Iteration 2:
-3. As a user, I want to be able to connect with potential collaborators. 
-- Front end user interface for adding friends & viewing friendslist (*Name*)
-- Back end API for friending & friend list (*Name*)
-- Accessing profiles for friending (*Name*) 
+3. As a user, I want to be able to browse other research ideas that I align with my interests and skills. 
+- Front end user interface for browsing posts, bulletin-board style (*Name*)
+- Back end API for browsing posts (*Name*)
+- Accessing posts on browse page (*Name*)
+
 
 ### Milestone 2.0 Project Requirements tasks and group member allocation
 
 #### Milestone 2.0 Features:
-- Browsing page
+- User connection
 - Search page
 - Search results page
 
 ### Project Requirements tasks and group member allocation:
-1. As a user, I want to be able to browse other research ideas that I align with my interests and skills. 
-- Front end user interface for browsing posts, bulletin-board style (*Name*)
-- Back end API for browsing posts (*Name*)
-- Accessing posts on browse page (*Name*)
+1. As a user, I want to be able to connect with potential collaborators. 
+- Front end user interface for adding friends & viewing friendslist (*Name*)
+- Back end API for friending & friend list (*Name*)
+- Accessing profiles for friending (*Name*) 
 
 2. As a user, I want to be able to search other research ideas based on a topic, keyword, username, or field. 
 - Front end user interface for searching page and results page (*Name*)
