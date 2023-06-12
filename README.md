@@ -26,9 +26,9 @@ ColLab is an application designed to boost collaborative research by creating a 
 ### Completion Times Estimates: 
 - Create an intuitive user-profile page: 1-2 weeks
 - Create an easy-to-use mechanic that allows users to post: 1-2 weeks 
-- Implementing a bulletin-board style browsing interface: 2 weeks
-- Implementing a search function for user posts: 1-2 week 
-- Implementing a function to save or favorite posts: 1 week
+- Implement a bulletin-board style browsing interface: 2 weeks
+- Implement a search function for user posts: 1-2 week 
+- Implement a function to save or favorite posts: 1 week
 - Testing and development: 2-3 weeks 
 
 #### Possible Additions:
