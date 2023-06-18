@@ -49,12 +49,12 @@ ColLab is an application designed to boost collaborative research by creating a 
 
 #### Iteration 1:
 1. As a user, I want to be able to create and log in to my profile. 
-- Front end user interface for sign-up and login (*Name*)
+- Front end user interface for sign-up and login - Bayan + Chasen
 - Back end API for login (*Name*)
 - Storing and access in login API (*Name*)
 
 2. As a user, I want to be able to post my ideas for research that I would like to work on collaboratively. 
-- Front end user interface for posting (*Name*)
+- Front end user interface for posting - Manny + Navya
 - Editing and deleting posts (*Name*)
 - Back end API for posts (*Name*)
 - Storing and access posts on profile pages (*Name*)
