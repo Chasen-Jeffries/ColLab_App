@@ -4,6 +4,7 @@ from flask_login import login_user, login_required, logout_user
 from .models import User
 from . import db
 
+
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -40,9 +41,16 @@ def signup_post():
     name = request.form.get('name')
     password = request.form.get('password')
 
+    # IF a user does not provide a CGU email it will redirect back to signup page so user can try again
+    allowed_domains = ['cgu.edu']
+    domain = email.split('@')[1]
+    if domain not in allowed_domains:
+       flash('Please provide a CGU email address')
+       return redirect(url_for('auth.signup'))
+
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
 
-    if user: # if a user is found, we want to redirect back to signup page so user can try again3
+    if user: # if a user is found, we want to redirect back to signup page so user can try again
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
 
