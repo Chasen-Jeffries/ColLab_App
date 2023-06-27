@@ -4,6 +4,11 @@ from flask_login import login_user, login_required, logout_user
 from .models import User
 from . import db
 
+from flask_mail import Message
+from . import mail
+import jwt
+from datetime import datetime, timedelta
+from flask import current_app as app
 
 auth = Blueprint('auth', __name__)
 
@@ -29,6 +34,7 @@ def login_post():
     # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
     return redirect(url_for('main.profile'))
+
 
 @auth.route('/signup')
 def signup():
@@ -69,3 +75,64 @@ def signup_post():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+
+@auth.route('/reset-password')
+def reset_password():
+    return render_template('reset_password.html')
+
+@auth.route('/reset-password', methods=['POST'])
+def send_password_reset_email():
+    email = request.form.get('email')
+    user = User.query.filter_by(email=email).first()
+    if user:
+        token = generate_password_reset_token(user)
+        reset_url = url_for('auth.reset_with_token', token=token, _external=True)
+        message = Message('Password Reset', sender='noreply@example.com', recipients=[email])
+        message.body = f"Click the link to reset your password: {reset_url}"
+        mail.send(message)
+    flash('Password reset email sent. Please check your inbox.')
+    return redirect(url_for('auth.login'))
+
+@auth.route('/reset-password/<token>', methods=['GET', 'POST'])
+def reset_with_token(token):
+    user = verify_password_reset_token(token)
+    if not user:
+        flash('Invalid or expired token.')
+        return redirect(url_for('auth.login'))
+    
+    if request.method == 'POST':
+        # Process the password reset form
+        new_password = request.form.get('new_password')
+        confirm_password = request.form.get('confirm_password')
+
+        if new_password != confirm_password:
+            flash('Passwords do not match.')
+            return redirect(url_for('auth.reset_with_token', token=token))
+
+        user.password = generate_password_hash(new_password, method='sha256')
+        db.session.commit()
+
+        flash('Your password has been reset successfully.')
+        return redirect(url_for('auth.login'))
+
+    return render_template('reset_password_with_token.html', token=token)
+
+def generate_password_reset_token(user):
+    token_data = {
+        'user_id': user.id,
+        'exp': datetime.utcnow() + timedelta(hours=1)  # Token expiry time (e.g., 1 hour)
+    }
+    token = jwt.encode(token_data, app.config['SECRET_KEY'], algorithm='HS256')
+    return token
+
+@staticmethod
+def verify_password_reset_token(token):
+    try:
+        token_data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        user_id = token_data.get('user_id')
+        user = User.query.get(user_id)
+        return user
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.DecodeError:
+        return None
