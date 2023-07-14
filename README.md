@@ -7,31 +7,27 @@ Follow these instructions to successfully run our app:
 - Note: Make sure you have the programs in the stated version (different versions may have differences that do not allow the successful running of the application)
 2. Navigate to your command prompt (CMD)
 3. Navigate to your desired folder and clone the repository on your local system
-a. Type "cd\" press enter
-b. Type "cd file_path" press enter
-- Insert your desired filepath where it says file_path.
-c. Go to the Github Repository, Click on Code in the repository on the Github Website and copy the given Github URL
-d. Type "git clone https://github.com/Chasen-Jeffries/Collab_App.git"
+- Type "cd\" press enter
+- Type "cd file_path" press enter (Insert your desired filepath where it says file_path)
+- Go to the Github Repository, Click on Code in the repository on the Github Website and copy the given Github URL
+- Type "git clone https://github.com/Chasen-Jeffries/Collab_App.git"
 4. Navigate to this new folder in your filepath
-a. Type "cd\" press enter
-b. Type "cd file_path" press enter
-- Insert the file_path to Collab_App (this should end in "\Collab_App")
+- Type "cd\" press enter
+- Type "cd file_path" press enter. (Insert the file_path to Collab_App. This should end in "\Collab_App")
 5. Setup the Flask Environment
-a. Type "Set Flask_App=App_Code" press enter
-b. Type "flask run" press enter
-c. Navigate your browser to "http://127.0.0.1:5000" in the URL bar
-d. Enjoy the Collab App! 
+- Type "Set Flask_App=App_Code" press enter
+- Type "flask run" press enter
+- Navigate your browser to "http://127.0.0.1:5000" in the URL bar
+- Enjoy the Collab App! 
 
 Note: This assumes you have already set up a virtual environment but if you have not follow the following steps before step 3.
 1. Navigate to your desired folder path.
-a. Type "cd\" press enter
-b. Type "cd file_path" press enter
-- Insert your desired filepath where it says file_path
+- Type "cd\" press enter
+- Type "cd file_path" press enter. (Insert your desired filepath where it says file_path)
 2. Create a virtual environment using the venv module.
-a. Type "python -m venv .env"
-- This creates a virtual environment where you can input the Flask App
+- Type "python -m venv .env". This creates a virtual environment where you can input the Flask App
 3. Activate the virtual environment.
-a. Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
+- Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
 
 
 ### Project Requirements expressed as user stories:
