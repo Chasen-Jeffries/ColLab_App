@@ -1,6 +1,39 @@
 # ColLab (Collaborative Laboratory)
 ColLab is an application designed to boost collaborative research by creating a bulletin board style website where students and faculty can post ideas for projects, research, and articles that they are interested in collaborating on with others. It uses python to access the data for each post within a repository as well as allow users to create new posts that are added to the repository. Users can browse posts based on school, department, or key-word or they can use a search function to lookup specific ideas or topics. The application will provide the information in a user-friendly manner, likely a bulletin board style. Finally, users can create a simple profile with relevant information that allows establishing connections (friending or following).
 
+### How to run the Flask App:
+Follow these instructions to successfully run our app:
+1. Navigate to the requirements.txt file and ensure you have the required programs and library's
+- Note: Make sure you have the programs in the stated version (different versions may have differences that do not allow the successful running of the application)
+2. Navigate to your command prompt (CMD)
+3. Navigate to your desired folder and clone the repository on your local system
+- a. Type "cd\" press enter
+- b. Type "cd <filepath>" press enter
+ -  Insert your desired filepath where it says <filepath>
+- c. Go to the Github Repository, Click on Code in the repository on the Github Website and copy the given Github URL
+- d. Type "git clone https://github.com/Chasen-Jeffries/Collab_App.git"
+4. Navigate to this new folder in your filepath
+- a. Type "cd\" press enter
+- b. Type "cd <filepath>" press enter
+ -  Insert the filepath to Collab_App (this should end in "\Collab_App")
+5. Setup the Flask Environment
+- a. Type "Set Flask_App=App_Code" press enter
+- b. Type "flask run" press enter
+- c. Navigate your browser to "http://127.0.0.1:5000" in the URL bar
+- d. Enjoy the Collab App! 
+
+Note: This assumes you have already set up a virtual environment but if you have not follow the following steps before step 3.
+1. Navigate to your desired folder path.
+- a. Type "cd\" press enter
+- b. Type "cd <filepath>" press enter
+ -  Insert your desired filepath where it says <filepath>
+2. Create a virtual environment using the venv module.
+- a. Type "python -m venv .env"
+ -  This creates a virtual environment where you can input the Flask App
+3. Activate the virtual environment.
+- a. Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
+
+
 ### Project Requirements expressed as user stories:
 - As a user, I want to be able to create and log in to my profile
   - I want to be able to write a brief biography about me and my research interests.
@@ -83,3 +116,28 @@ ColLab is an application designed to boost collaborative research by creating a 
 - Front end user interface for searching page and results page (*Name*)
 - Back end API for searching posts and results page (*Name*)
 - Accessing posts on search results page (*Name*)
+
+
+### How to run the BurnDown Chart
+To run the BurnDown_Chart2.py script (first insure that Python3 is loaded. download from the official Pythion website). The following libraries, using pip, will need to be installed: Pandas along with matplotlib. Run the following in your terminal/shell:
+- pip install pandas
+- pip install matplotlib
+Once Python and the necessary libraries are installed, the script can be run.
+
+#### Output
+The output will be a plot representing the burn down chart. The x-axis is the number of days, and the y-axis is the remaining story points. The chart includes the actual story points line (in blue, if using the default settings). The blue ideal line represents the theoretical progress if the team burns down story points at a constant rate.
+
+Once progress is made, the chart can be updated with the actual time spent on each story point and actual progress can be tracked to the ideal progress to track the teams estimated completion time and to ascertain if incremental effiort is required to complete timely or if respurces may need to be realigned.
+
+### STEPS INVOLVED IN CREATING AND MAINTAINING A BURNDOWN CHART:
+A burn down chart, in software development, is a graphical representation of work left to do versus time. It's often used in agile project management, particularly in Scrum, to track the progress of a sprint or a project.
+
+#### Steps to create a burn down chart:
+1. Define the Sprint Backlog: Determine what work needs to be done during a sprint. This includes estimating the number of story points (or hours) each task will take.
+2. Create the Chart: Draw a graph where the x-axis represents time (in days of the sprint) and the y-axis represents the total amount of work left at the start of the sprint (in story points or hours). We used Python for this taskm but can use other tools or can be drawn out manually.
+3. Plot the Ideal Burn Down Line: Draw a line from the top left corner (start of the sprint, total work) to the bottom right corner (end of the sprint, no work left). This line represents the ideal progress of the sprint.
+4. Track the Actual Progress: Each day of the sprint, calculate the remaining work and plot it on the chart. This creates the actual burn down line, which starts at the same point as the ideal line but might zig-zag up and down, depending on the team's progress.
+5. Update Daily: The chart is updated at the end of each day as work is completed. Any changes in scope or work are also reflected on the chart.
+
+The burn down chart is an effective tool for visualizing the progress of the sprint. It allows the team and stakeholders to quickly see if they're on track to complete all the work by the end of the sprint.
+                                                                                                                                                                    
