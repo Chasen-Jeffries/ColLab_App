@@ -5,7 +5,7 @@ ColLab is an application designed to boost collaborative research by creating a 
 Follow these instructions to successfully run our app:
 
 1. Navigate to the requirements.txt file and ensure you have the required programs and library's
-- Note: Make sure you have the programs in the stated version (different versions may have differences that do not allow the successful running of the application)
+- Make sure you have the programs in the stated version (different versions may have differences that do not allow the successful running of the application)
 2. Navigate to your command prompt (CMD)
 3. Navigate to your desired folder and clone the repository on your local system
 - Type "cd\" press enter
