@@ -1,8 +1,9 @@
 # ColLab (Collaborative Laboratory)
 ColLab is an application designed to boost collaborative research by creating a bulletin board style website where students and faculty can post ideas for projects, research, and articles that they are interested in collaborating on with others. It uses python to access the data for each post within a repository as well as allow users to create new posts that are added to the repository. Users can browse posts based on school, department, or key-word or they can use a search function to lookup specific ideas or topics. The application will provide the information in a user-friendly manner, likely a bulletin board style. Finally, users can create a simple profile with relevant information that allows establishing connections (friending or following).
 
-### How to run the Flask App:
+## How to run the Flask App:
 Follow these instructions to successfully run our app:
+
 1. Navigate to the requirements.txt file and ensure you have the required programs and library's
 - Note: Make sure you have the programs in the stated version (different versions may have differences that do not allow the successful running of the application)
 2. Navigate to your command prompt (CMD)
@@ -20,8 +21,9 @@ Follow these instructions to successfully run our app:
 - Navigate your browser to "http://127.0.0.1:5000" in the URL bar
 - Enjoy the Collab App! 
 
-##### Note: This assumes you have already set up a virtual environment
+#### NOTE: This assumes you have already set up a virtual environment
 If you have not already set up a virtual environment, follow these steps before step 3.
+
 1. Navigate to your desired folder path.
 - Type "cd\" press enter
 - Type "cd file_path" press enter. (Insert your desired filepath where it says file_path)
