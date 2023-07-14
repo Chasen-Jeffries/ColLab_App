@@ -20,7 +20,8 @@ Follow these instructions to successfully run our app:
 - Navigate your browser to "http://127.0.0.1:5000" in the URL bar
 - Enjoy the Collab App! 
 
-Note: This assumes you have already set up a virtual environment but if you have not follow the following steps before step 3.
+##### Note: This assumes you have already set up a virtual environment
+If you have not already set up a virtual environment, follow these steps before step 3.
 1. Navigate to your desired folder path.
 - Type "cd\" press enter
 - Type "cd file_path" press enter. (Insert your desired filepath where it says file_path)
