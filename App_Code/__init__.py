@@ -2,6 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_mail import Mail
+from .main import main as main_blueprint
+from .main import research as research_blueprint
 
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
@@ -14,7 +16,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
-# Flask-Mail configuration
+    # Flask-Mail configuration
     app.config['MAIL_SERVER'] = 'smtp.gmail.com'
     app.config['MAIL_PORT'] = 587
     app.config['MAIL_USE_TLS'] = True
@@ -46,7 +48,7 @@ def create_app():
     app.register_blueprint(auth_blueprint)
 
     # blueprint for non-auth parts of app
-    from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+    app.register_blueprint(research_blueprint)
 
     return app
