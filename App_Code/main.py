@@ -1,9 +1,12 @@
 from flask import Blueprint, render_template, abort, request, flash, redirect, url_for
 from flask_login import login_required, current_user
+from flask import Flask  # Add this line to import Flask
+
 import sqlite3
 from datetime import datetime
 
 main = Blueprint('main', __name__)
+app = Flask(__name__)  # Create an instance of Flask
 
 @main.route('/')
 def index():
@@ -21,8 +24,11 @@ def index():
             'created': created.strftime('%B %d, %Y')
         }
         formatted_posts.append(formatted_post)
-        
+
+    print(formatted_posts)  # Add this line to check the value of formatted_posts
+
     return render_template('index.html', posts=formatted_posts)
+
 
 @main.route('/profile')
 @login_required
@@ -36,14 +42,15 @@ def get_db_connection():
 
 def get_post(post_id):
     conn = get_db_connection()
-    post = conn.execute('SELECT * FROM posts WHERE id = ?',
-                        (post_id,)).fetchone()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone()
     conn.close()
+
     if post is None:
         abort(404)
+
     return post
 
-@main.route('/<int:post_id>')
+@main.route('/post/<int:post_id>')
 def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
@@ -59,8 +66,7 @@ def create():
             flash('Title is required!', 'error')
         else:
             conn = get_db_connection()
-            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
-                         (title, content))
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)', (title, content))
             conn.commit()
             conn.close()
             flash('Post created successfully!', 'success')
@@ -68,7 +74,7 @@ def create():
 
     return render_template('create.html')
 
-@main.route('/<int:id>/edit', methods=['GET', 'POST'])
+@main.route('/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit(id):
     post = get_post(id)
@@ -81,9 +87,7 @@ def edit(id):
             flash('Title is required!', 'error')
         else:
             conn = get_db_connection()
-            conn.execute('UPDATE posts SET title = ?, content = ?'
-                         ' WHERE id = ?',
-                         (title, content, id))
+            conn.execute('UPDATE posts SET title = ?, content = ? WHERE id = ?', (title, content, id))
             conn.commit()
             conn.close()
             flash('Post updated successfully!', 'success')
@@ -91,7 +95,7 @@ def edit(id):
 
     return render_template('edit.html', post=post)
 
-@main.route('/<int:id>/delete', methods=['POST'])
+@main.route('/delete/<int:id>', methods=['POST'])
 @login_required
 def delete(id):
     post = get_post(id)
@@ -108,22 +112,18 @@ def about():
 
 @main.route('/research')
 def research():
-    conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts').fetchall()
-    conn.close()
+    posts = get_all_posts()
     return render_template('research.html', posts=posts)
 
 research = Blueprint('research', __name__)
 
 @research.route('/research-postings')
 def research_postings():
-    posts = get_all_posts()  # Replace this with your logic to fetch all research postings
+    posts = get_all_posts()
     return render_template('research_postings.html', posts=posts)
 
 def get_all_posts():
-    # Replace this with your logic to fetch all research postings from the database
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return posts
-

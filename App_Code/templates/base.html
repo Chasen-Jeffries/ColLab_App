@@ -56,9 +56,28 @@
                                 </a>
                                 <div class="navbar-dropdown">
                                     <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
-                                        TOPIC DROPDOWN MENU
+                                        RESEARCH TOPICS
                                     </a>
-                                    <!-- Add more dropdown items as needed -->
+                                    <a href="{{ url_for('research.research_postings', topic='topic1') }}" class="navbar-item">Quantum Computing</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic2') }}" class="navbar-item">Edge Computing</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic3') }}" class="navbar-item">AI & Machine Learning</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic4') }}" class="navbar-item">Cybersecurity</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic5') }}" class="navbar-item">5G & Beyond</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic6') }}" class="navbar-item">Blockchain & Decentralized Systems</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic7') }}" class="navbar-item">Digital Twins</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic8') }}" class="navbar-item">Natural Language Processing (NLP)</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic9') }}" class="navbar-item">Federated Learning</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">Green IT</a>
+                                    <!-- Add more research topics as needed -->
+                                </div>
+                            </div>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    Research Posts
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a href="{{ url_for('main.create') }}" class="navbar-item">New Research Post</a>
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Research Postings</a>
                                 </div>
                             </div>
                         </div>
@@ -77,6 +96,9 @@
                                         </a>
                                         <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
                                             All Research Postings
+                                        </a>
+                                        <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item">
+                                            Edit Research Post
                                         </a>
                                         <hr class="navbar-divider">
                                         <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item">

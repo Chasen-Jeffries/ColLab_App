@@ -3,8 +3,7 @@
 {% block content %}
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a class="navbar-brand" href="{{ url_for('main.index') }}">Collab_App</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-        aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -20,16 +19,18 @@
     </nav>
 
     <h1>WELCOME TO THE COLLABORATION SPACE</h1>
-    {% for post in posts %}
-        <a href="{{ url_for('main.post', post_id=post['id']) }}">
-            <h2>{{ post['title'] }}</h2>
-        </a>
-        <span class="badge badge-primary">{{ post['created'] }}</span>
-        <a href="{{ url_for('main.edit', id=post['id']) }}">
-            <span class="badge badge-warning">Edit</span>
-        </a>
-        <hr>
-    {% endfor %}
+    {% if posts %}
+        {% for post in posts %}
+            <a href="{{ url_for('main.post', post_id=post['id']) }}">
+                <h2>{{ post['title'] }}</h2>
+            </a>
+            <span class="badge badge-primary">{{ post['created'] }}</span>
+            <a href="{{ url_for('main.edit', id=post['id']) }}" class="navbar-item dropdown-item">
+                <span class="badge badge-warning">Edit</span>
+            </a>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No posts found.</p>
+    {% endif %}
 {% endblock %}
-
-
