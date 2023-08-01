@@ -32,6 +32,22 @@ If you have not already set up a virtual environment, follow these steps before 
 3. Activate the virtual environment.
 - Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
 
+4. Install the necessary packages within the virtual environment.
+
+- Once your virtual environment is activated, you can install the necessary packages that the project depends on.
+
+- To do this, type "pip install -r requirements.txt". This command reads the requirements.txt file and installs all the Python packages listed in it.
+
+## How to Run the Tests
+1. Ensure pytest is installed:
+- Pytest is required to run the tests.
+- It can be installed in your virtual environment by using the following command: “pip install pytest”.
+3. Navigate to the App_Code directory:
+- Using your terminal, navigate to the directory where the main application files are located.
+- You should be in the same directory as test_app.py: “cd path/to/App_Code”
+4. Run the tests:
+- Run all tests in the project by executing the following command in the terminal: “ pytest test_app.py”
+
 
 ### Project Requirements expressed as user stories:
 - As a user, I want to be able to create and log in to my profile
