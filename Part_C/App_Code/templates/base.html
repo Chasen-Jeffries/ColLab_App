@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is the ColLab (Collaborative Laboratory) website">
+    <meta name="ColLab" content="ColLab is a web based application designed to boost collaborative research through a bulletin board design where students and faculty can post ideas for projects, research, and articles that they are interested in collaborating with others.">
+    <title>ColLab - Collaborative Laboratory!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <style>
+        .navbar-item.is-active .navbar-link,
+        .navbar-item.is-active .dropdown-item {
+            background-color: #3273dc;
+            color: #fff;
+        }
+        
+        .navbar-item.has-dropdown:hover .navbar-link,
+        .navbar-item.has-dropdown:focus .navbar-link {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        
+        .navbar-item.has-dropdown:hover .navbar-dropdown,
+        .navbar-item.has-dropdown:focus .navbar-dropdown {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        
+        .navbar-item.has-dropdown .navbar-dropdown {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .navbar-item.has-dropdown .dropdown-item {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-start">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="{{ url_for('main.about') }}" class="navbar-item">
+                                About
+                            </a>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    Research Topics
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
+                                        RESEARCH TOPICS
+                                    </a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic1') }}" class="navbar-item">Quantum Computing</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic2') }}" class="navbar-item">Edge Computing</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic3') }}" class="navbar-item">AI & Machine Learning</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic4') }}" class="navbar-item">Cybersecurity</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic5') }}" class="navbar-item">5G & Beyond</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic6') }}" class="navbar-item">Blockchain & Decentralized Systems</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic7') }}" class="navbar-item">Digital Twins</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic8') }}" class="navbar-item">Natural Language Processing (NLP)</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic9') }}" class="navbar-item">Federated Learning</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">Green IT</a>
+                                    <!-- Add more research topics as needed -->
+                                </div>
+                            </div>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    Research Posts
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a href="{{ url_for('main.create') }}" class="navbar-item">New Research Post</a>
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Research Postings</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navbar-end">
+                            {% if current_user.is_authenticated %}
+                                <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link">
+                                        Account
+                                    </a>
+                                    <div class="navbar-dropdown">
+                                        <a href="{{ url_for('main.profile') }}" class="navbar-item dropdown-item">
+                                            Profile
+                                        </a>
+                                        <a href="{{ url_for('main.create') }}" class="navbar-item dropdown-item">
+                                            New Research Post
+                                        </a>
+                                        <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
+                                            All Research Postings
+                                        </a>
+                                        <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item">
+                                            Edit Research Post
+                                        </a>
+                                        <hr class="navbar-divider">
+                                        <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item">
+                                            Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="navbar-item">
+                                    <div class="buttons">
+                                        <a href="{{ url_for('auth.login') }}" class="button is-primary">
+                                            Login
+                                        </a>
+                                        <a href="{{ url_for('auth.signup') }}" class="button is-light">
+                                            Sign Up
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
