@@ -9,41 +9,97 @@
     <title>ColLab - Collaborative Laboratory!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+        }
+
         .navbar-item.is-active .navbar-link,
         .navbar-item.is-active .dropdown-item {
-            background-color: #3273dc;
+            background-color: #333;
             color: #fff;
         }
-        
+
         .navbar-item.has-dropdown:hover .navbar-link,
         .navbar-item.has-dropdown:focus .navbar-link {
-            background-color: #f5f5f5;
-            color: #000;
+            background-color: #333;
+            color: #fff;
         }
-        
+
         .navbar-item.has-dropdown:hover .navbar-dropdown,
         .navbar-item.has-dropdown:focus .navbar-dropdown {
-            background-color: #f5f5f5;
-            color: #000;
+            background-color: #333;
+            color: #fff;
         }
-        
+
         .navbar-item.has-dropdown .navbar-dropdown {
-            background-color: #fff;
-            color: #000;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .navbar-item.has-dropdown .dropdown-item {
+            color: #333;
         }
         
-        .navbar-item.has-dropdown .dropdown-item {
-            color: #000;
+        .main-title {
+            font-size: 3.5rem; 
+            text-align: center;
+            margin-top: 0vh; 
+            color: #666; 
+            font-weight: bold;
+            
+        .navbar-item {
+            margin-right: 10px;
         }
+
+        .navbar-item:last-child {
+            margin-right: 0;
+        }
+        
+        .post-link {
+            text-decoration: none;
+        }
+
+        .post {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .post:hover {
+            background-color: #ececec;
+        }
+
+        .post-divider {
+            border-color: #d3d3d3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+        font-weight: normal; /* Add this line to unbold the subtitle */
+        }
+        
     </style>
 </head>
 <body>
-    <section class="hero is-primary is-fullheight">
+    <section class="hero is-black is-fullheight">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-start">
+                            
                             <a href="{{ url_for('main.index') }}" class="navbar-item">
                                 Home
                             </a>
@@ -84,28 +140,29 @@
                         <div class="navbar-end">
                             {% if current_user.is_authenticated %}
                                 <div class="navbar-item has-dropdown is-hoverable">
-                                    <a class="navbar-link">
+                                    <a class="navbar-link has-text-white">
                                         Account
                                     </a>
                                     <div class="navbar-dropdown">
-                                        <a href="{{ url_for('main.profile') }}" class="navbar-item dropdown-item">
+                                        <a href="{{ url_for('main.profile') }}" class="navbar-item dropdown-item has-text-white">
                                             Profile
                                         </a>
-                                        <a href="{{ url_for('main.create') }}" class="navbar-item dropdown-item">
+                                        <a href="{{ url_for('main.create') }}" class="navbar-item dropdown-item has-text-white">
                                             New Research Post
                                         </a>
-                                        <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
+                                        <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item has-text-white">
                                             All Research Postings
                                         </a>
-                                        <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item">
+                                        <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item has-text-white">
                                             Edit Research Post
                                         </a>
                                         <hr class="navbar-divider">
-                                        <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item">
+                                        <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item has-text-white">
                                             Logout
                                         </a>
                                     </div>
                                 </div>
+
                             {% else %}
                                 <div class="navbar-item">
                                     <div class="buttons">
@@ -125,6 +182,7 @@
         </div>
         <div class="hero-body">
             <div class="container has-text-centered">
+            <h2 class="title main-title">Collaborative Laboratory</h2>
                 {% block content %}
                 {% endblock %}
             </div>

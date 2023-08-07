@@ -1,38 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} CREATE A NEW RESEARCH POSTING {% endblock %}</h1>
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <h1 class="title has-text-centered">{% block title %}CREATE A NEW RESEARCH POSTING{% endblock %}</h1>
 
-<form method="post">
-    <div class="form-group">
-        <label for="title">Concept-Title</label>
-        <input type="text" name="title"
-               placeholder="Post Concept" class="form-control"
-               value="{{ request.form['title'] }}"></input>
+                <form method="post">
+                    <div class="field">
+                        <label class="label has-text-white">Concept-Title</label>
+                        <div class="control">
+                            <input type="text" name="title" placeholder="Post Concept" class="input"
+                                   value="{{ request.form['title'] }}">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label has-text-white">Research Design</label>
+                        <div class="control">
+                            <textarea name="content" placeholder="Details about method, data, hypothesis, etc. related to research"
+                                      class="textarea">{{ request.form['content'] }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label has-text-white">Collaboration Desired</label>
+                        <div class="control">
+                            <textarea name="content" placeholder="Data Analysis, Domain Expertise, Writing Assistance"
+                                      class="textarea">{{ request.form['content'] }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label has-text-white">Key Words</label>
+                        <div class="control">
+                            <textarea name="content" placeholder="Python, AI, ML, Finance, etc." class="textarea">{{ request.form['content'] }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label for="content">Research Design</label>
-        <textarea name="content" placeholder="details about mthod, data, hypothesis, etc related to research"
-                  class="form-control">{{ request.form['content'] }}</textarea>
-    </div>
-
-    <div class="form-group">    
-        <label for="content">Collaboration Desired</label>
-        <textarea name="content" placeholder="Data Analysis, Domain Expertise, Writing Assistance"
-                  class="form-control">{{ request.form['content'] }}</textarea>
-    </div>
-
-    <div class="form-group">    
-        <label for="content">Key Words</label>
-        <textarea name="content" placeholder="Python, AI, ML, Finance, etc."
-                  class="form-control">{{ request.form['content'] }}</textarea>
-
-
-
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-</form>
+</section>
 {% endblock %}
