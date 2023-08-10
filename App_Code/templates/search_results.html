@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-top: 20px; background-color: #007bff; padding: 10px;">Search Results for: "{{ query }}"</h1>
+    <br>
+    {% if matching_posts %}
+    {% for post in matching_posts %}
+        <a href="{{ url_for('main.post', post_id=post.id) }}">
+            <h2>{{ post.title }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ post.created }}</span>
+        <hr>
+    {% endfor %}
+    {% else %}
+    <p>Oops, it seems we couldn't find any posts related to your search. Would you like to try searching for something else?</p>
+    <br>
+    <a href="{{ url_for('main.search') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; text-decoration: none;">
+        <h2 style="margin: 0;">Start a New Search</h2>
+    </a>
+        {% endif %}
+{% endblock %}

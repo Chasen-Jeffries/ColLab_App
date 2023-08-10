@@ -127,3 +127,27 @@ def get_all_posts():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return posts
+
+@main.route('/search', methods=['GET'])
+def search():
+    return render_template('search.html')
+
+@main.route('/search-results', methods=['GET'])
+def search_results():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+
+    query = request.args.get('query', '').lower()  # Get the query from the URL parameter
+
+    matching_posts = []
+    
+    for post in posts:
+        content = post['content'].lower()
+        title = post['title'].lower()
+
+        # Check if the query is in the content or title of the post
+        if query in content or query in title:
+            matching_posts.append(post)
+
+    return render_template('search_results.html', query=query, matching_posts=matching_posts)

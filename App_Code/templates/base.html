@@ -106,6 +106,10 @@
                             <a href="{{ url_for('main.about') }}" class="navbar-item">
                                 About
                             </a>
+                            <a href="{{ url_for('main.search') }}" class="navbar-item">
+                                Search
+                            </a>    
+                            
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">
                                     Research Topics
@@ -135,7 +139,7 @@
                                     <a href="{{ url_for('main.create') }}" class="navbar-item">New Research Post</a>
                                     <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Research Postings</a>
                                 </div>
-                            </div>
+                            </div>                        
                         </div>
                         <div class="navbar-end">
                             {% if current_user.is_authenticated %}
