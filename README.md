@@ -15,7 +15,10 @@ Follow these instructions to successfully run our app:
 4. Navigate to this new folder in your filepath
 - Type "cd\" press enter
 - Type "cd file_path" press enter. (Insert the file_path to Collab_App. This should end in "\Collab_App")
-5. Setup the Flask Environment
+5. Install Required packages
+- Use the pip command on the requirements file.
+- "pip install -r requirements.txt"
+6. Setup the Flask Environment
 - Type "Set Flask_App=App_Code" press enter
 - Type "flask run" press enter
 - Navigate your browser to "http://127.0.0.1:5000" in the URL bar
