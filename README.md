@@ -47,9 +47,10 @@ If you have not already set up a virtual environment, follow these steps before 
 - It can be installed in your virtual environment by using the following command: “pip install pytest”.
 3. Navigate to the App_Code directory:
 - Using your terminal, navigate to the directory where the main application files are located.
-- You should be in the same directory as test_app.py: “cd path/to/App_Code”
+- You should be in the same directory as test file: “cd path/to/App_Code”
 4. Run the tests:
 - Run all tests in the project by executing the following command in the terminal: “pytest”
+- For coverage tests , execute: coverage report
 
 
 ## Project Requirements expressed as user stories:
