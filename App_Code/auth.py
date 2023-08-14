@@ -47,6 +47,10 @@ def signup_post():
     name = request.form.get('name')
     password = request.form.get('password')
 
+    if not email:
+        flash('Please provide a CGU email address')
+        return redirect(url_for('auth.signup'))
+
     # IF a user does not provide a CGU email it will redirect back to signup page so user can try again
     allowed_domains = ['cgu.edu']
     domain = email.split('@')[1]
