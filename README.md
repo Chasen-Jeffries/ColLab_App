@@ -158,4 +158,5 @@ A burn down chart, in software development, is a graphical representation of wor
 5. Update Daily: The chart is updated at the end of each day as work is completed. Any changes in scope or work are also reflected on the chart.
 
 The burn down chart is an effective tool for visualizing the progress of the sprint. It allows the team and stakeholders to quickly see if they're on track to complete all the work by the end of the sprint.
+                
                                                                                                                                                                     
