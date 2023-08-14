@@ -49,7 +49,7 @@ If you have not already set up a virtual environment, follow these steps before 
 - Using your terminal, navigate to the directory where the main application files are located.
 - You should be in the same directory as test_app.py: “cd path/to/App_Code”
 4. Run the tests:
-- Run all tests in the project by executing the following command in the terminal: “ pytest test_app.py”
+- Run all tests in the project by executing the following command in the terminal: “ pytest”
 
 
 ### Project Requirements expressed as user stories:
