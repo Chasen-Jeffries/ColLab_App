@@ -36,9 +36,7 @@ If you have not already set up a virtual environment, follow these steps before 
 - Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
 
 4. Install the necessary packages within the virtual environment.
-
 - Once your virtual environment is activated, you can install the necessary packages that the project depends on.
-
 - To do this, type "pip install -r requirements.txt". This command reads the requirements.txt file and installs all the Python packages listed in it.
 
 ## How to Run the Tests
@@ -160,4 +158,8 @@ A burn down chart, in software development, is a graphical representation of wor
 
 The burn down chart is an effective tool for visualizing the progress of the sprint. It allows the team and stakeholders to quickly see if they're on track to complete all the work by the end of the sprint.
                 
-                                                                                                                                                                    
+## What We Learned:
+Through our project, we gained essential insights that reshaped our software development understanding, leaving a lasting impact. These are the three most important insights we identified:
+1. Collaborative Workflow Efficiency: Emphasizing a collaborative workflow improved our efficiency. Regular code reviews, version control, and clear communication showcased the value of teamwork in creating robust software solutions.
+2. Problem Decomposition and Effective Solutions: Our project highlighted the importance of breaking down complex challenges into manageable components. By learning to dissect problems and construct effective strategies for each part, we gained valuable insights into problem-solving and software design.
+3. Leveraging Data Structures and Algorithms: This project underscored the significance of mastering data structures and algorithms. Our deeper understanding allowed us to optimize code performance and appreciate how foundational knowledge impacts overall software quality.
