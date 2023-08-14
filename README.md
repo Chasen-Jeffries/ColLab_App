@@ -36,7 +36,9 @@ If you have not already set up a virtual environment, follow these steps before 
 - Type ".env\Scripts\activate" (for Mac users, use the following "source .env/bin/activate")
 
 4. Install the necessary packages within the virtual environment.
+
 - Once your virtual environment is activated, you can install the necessary packages that the project depends on.
+
 - To do this, type "pip install -r requirements.txt". This command reads the requirements.txt file and installs all the Python packages listed in it.
 
 ## How to Run the Tests
@@ -45,13 +47,12 @@ If you have not already set up a virtual environment, follow these steps before 
 - It can be installed in your virtual environment by using the following command: “pip install pytest”.
 3. Navigate to the App_Code directory:
 - Using your terminal, navigate to the directory where the main application files are located.
-- You should be in the same directory as test file: “cd path/to/App_Code”
+- You should be in the same directory as test_app.py: “cd path/to/App_Code”
 4. Run the tests:
-- Run all tests in the project by executing the following command in the terminal: “pytest”
-- For coverage tests , execute: coverage report
+- Run all tests in the project by executing the following command in the terminal: “ pytest”
 
 
-## Project Requirements expressed as user stories:
+### Project Requirements expressed as user stories:
 - As a user, I want to be able to create and log in to my profile
   - I want to be able to write a brief biography about me and my research interests.
 - As a user, I want to be able to post my research ideas that I would like to work on collaboratively.
@@ -157,9 +158,9 @@ A burn down chart, in software development, is a graphical representation of wor
 5. Update Daily: The chart is updated at the end of each day as work is completed. Any changes in scope or work are also reflected on the chart.
 
 The burn down chart is an effective tool for visualizing the progress of the sprint. It allows the team and stakeholders to quickly see if they're on track to complete all the work by the end of the sprint.
-                
-## What We Learned:
-Through our project, we gained essential insights that reshaped our software development understanding, leaving a lasting impact. These are the three most important insights we identified:
-1. Collaborative Workflow Efficiency: Emphasizing a collaborative workflow improved our efficiency. Regular code reviews, version control, and clear communication showcased the value of teamwork in creating robust software solutions.
-2. Problem Decomposition and Effective Solutions: Our project highlighted the importance of breaking down complex challenges into manageable components. By learning to dissect problems and construct effective strategies for each part, we gained valuable insights into problem-solving and software design.
-3. Leveraging Data Structures and Algorithms: This project underscored the significance of mastering data structures and algorithms. Our deeper understanding allowed us to optimize code performance and appreciate how foundational knowledge impacts overall software quality.
+                                                                                                                                                                    
+## Part D
+## The three most important things that I (Manny M Trelles) learned was:
+## 1.  The Importance of Modular and Reusable Code: By using a base template and extending it for different views, we were applying the principle of DRY (Don't Repeat Yourself). This encourageed us to create reusable components that can simplify development, make the codebase more maintainable, and reduce the chance of errors
+## 2. Understanding and Applying Framework Concepts: I have learned how to use Flask's routing system and the Jinja2 templating engine. Working with these tools requires understanding how they operate and how they can be applied to create dynamic web pages. This seems to reflect a broader lesson in software development: the importance of learning and effectively utilizing the frameworks, libraries, and tools available in a particular technology stack.
+## 3. Iterative Development and Troubleshooting: The trial-and-error process that unfolded as we worked on the project demonstrates how software development often involves an iterative process of writing code, testing, identifying issues, and refining. This seeems to be a core part of the development lifecycle and tought us the importance of breaking down problems into smaller, manageable parts, and methodically working through them. It also underscores the importance of testing and validation to ensure that each part of the system is functioning as intended.
