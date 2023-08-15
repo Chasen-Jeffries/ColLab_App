@@ -48,7 +48,9 @@ If you have not already set up a virtual environment, follow these steps before 
 - You should be in the same directory as test file: “cd path/to/App_Code”
 4. Run the tests:
 - Run all tests in the project by executing the following command in the terminal: “pytest”
-- For coverage tests , execute: coverage report
+5. Run the coverage test :
+- ensure the pytest-cov plugin is installed in your environment:pip install pytest-cov
+- After installing the plugin, run this test coverage command: pytest --cov or coverage report
 
 
 ## Project Requirements expressed as user stories:
