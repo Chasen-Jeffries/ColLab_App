@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is the ColLab (Collaborative Laboratory) website">
-    <meta name="ColLab" content="ColLab is a web based application designed to boost collaborative research through a bulletin board design where students and faculty can post ideas for projects, research, and articles that they are interested in collaborating with others.">
-    <title>ColLab - Collaborative Laboratory!</title>
+    <meta name="description" content="This is Asgard's Great North's Saga Weaver">
+    <meta name="ColLab" content="Great North's Saga Weaver not only creates stories and images with cultural accuracy but allows you to expand upon the Norse Mythology">
+    <title>Great North's Saga Weaver</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <style>
         body {
@@ -93,51 +93,44 @@
     </style>
 </head>
 <body>
-    <section class="hero is-black is-fullheight">
+  <section class="hero is-black is-fullheight">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div id="navbarMenuHeroA" class="navbar-menu">
                         <div class="navbar-start">
                             
-                            <a href="{{ url_for('main.index') }}" class="navbar-item">
-                                Home
-                            </a>
-                            <a href="{{ url_for('main.about') }}" class="navbar-item">
-                                About
-                            </a>
-                            <a href="{{ url_for('main.search') }}" class="navbar-item">
-                                Search
-                            </a>    
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">Home</a>
+                            <a href="{{ url_for('main.about') }}" class="navbar-item">About</a>
+                            <a href="{{ url_for('main.search') }}" class="navbar-item">Myth Search</a>    
                             
                             <div class="navbar-item has-dropdown is-hoverable">
-                                <a class="navbar-link">
-                                    Research Topics
-                                </a>
+                                <a class="navbar-link">Norse Gods and Goddesses</a>
                                 <div class="navbar-dropdown">
-                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
-                                        RESEARCH TOPICS
-                                    </a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic1') }}" class="navbar-item">Quantum Computing</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic2') }}" class="navbar-item">Edge Computing</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic3') }}" class="navbar-item">AI & Machine Learning</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic4') }}" class="navbar-item">Cybersecurity</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic5') }}" class="navbar-item">5G & Beyond</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic6') }}" class="navbar-item">Blockchain & Decentralized Systems</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic7') }}" class="navbar-item">Digital Twins</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic8') }}" class="navbar-item">Natural Language Processing (NLP)</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic9') }}" class="navbar-item">Federated Learning</a>
-                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">Green IT</a>
-                                    <!-- Add more research topics as needed -->
+                                    <a href="{{ url_for('main.odin') }}" class="navbar-item">Odin</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Thor</a>
+                                    <a href="{{ url_for('main.loki') }}" class="navbar-item">Loki</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Njord</a>
+                                    <a href="{{ url_for('main.odin') }}" class="navbar-item">Vili & Ve</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Fjorgyn</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Freyja</a>
+                                    <a href="{{ url_for('main.odin') }}" class="navbar-item">Frigg</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Hel</a>
+                                    <a href="{{ url_for('main.odin') }}" class="navbar-item">Sif</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Ragnar Lothbrok</a>
+                                    <a href="{{ url_for('main.odin') }}" class="navbar-item">King Harald Hardra</a>
+                                    <a href="{{ url_for('main.thor') }}" class="navbar-item">Mjolnir</a>
+                                    <!-- Add more mythology topics as needed -->
+
                                 </div>
                             </div>
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">
-                                    Research Posts
+                                    Myths
                                 </a>
                                 <div class="navbar-dropdown">
-                                    <a href="{{ url_for('main.create') }}" class="navbar-item">New Research Post</a>
-                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Research Postings</a>
+                                    <a href="{{ url_for('main.create_myth') }}" class="navbar-item">Weave New Myth</a>
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Myths</a>
                                 </div>
                             </div>                        
                         </div>
@@ -145,20 +138,20 @@
                             {% if current_user.is_authenticated %}
                                 <div class="navbar-item has-dropdown is-hoverable">
                                     <a class="navbar-link has-text-white">
-                                        Account
+                                        Valorous Heroine & Hero - Account
                                     </a>
                                     <div class="navbar-dropdown">
                                         <a href="{{ url_for('main.profile') }}" class="navbar-item dropdown-item has-text-white">
                                             Profile
                                         </a>
-                                        <a href="{{ url_for('main.create') }}" class="navbar-item dropdown-item has-text-white">
-                                            New Research Post
+                                        <a href="{{ url_for('main.create_myth') }}" class="navbar-item dropdown-item has-text-white">
+                                            Weave New Myth
                                         </a>
                                         <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item has-text-white">
-                                            All Research Postings
+                                            All Myths
                                         </a>
                                         <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item has-text-white">
-                                            Edit Research Post
+                                            Edit Myth
                                         </a>
                                         <hr class="navbar-divider">
                                         <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item has-text-white">
@@ -186,7 +179,7 @@
         </div>
         <div class="hero-body">
             <div class="container has-text-centered">
-            <h2 class="title main-title">Collaborative Laboratory</h2>
+            <h2 class="title main-title">Great North's Saga Weaver</h2>
                 {% block content %}
                 {% endblock %}
             </div>

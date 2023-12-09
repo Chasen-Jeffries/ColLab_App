@@ -5,6 +5,5 @@ flask_sqlalchemy==3.0.5
 matplotlib==3.7.0
 numpy==1.23.5
 pandas==1.5.3
-PyJWT==2.4.0
-PyJWT==2.7.0
+PyJWT
 Werkzeug==2.3.6

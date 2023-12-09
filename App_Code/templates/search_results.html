@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 style="text-align: center; margin-top: 20px; background-color: #007bff; padding: 10px;">Search Results for: "{{ query }}"</h1>
+<style>
+    .content-background {
+        background-image: url("{{ url_for('static', filename='Myth Search.png') }}");
+        background-size: cover; /* Cover the entire area */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-position: center; /* Center the image */
+        min-height: 500px; /* Temporary height for testing */
+    }
+</style>
+
+<div class="content-background">
+    <h1 style="text-align: center; margin-top: 20px; background-color: #007bff; padding: 10px; color: white;">Search Results for: "{{ query }}"</h1>
     <br>
     {% if matching_posts %}
     {% for post in matching_posts %}
@@ -12,10 +23,16 @@
         <hr>
     {% endfor %}
     {% else %}
-    <p>Oops, it seems we couldn't find any posts related to your search. Would you like to try searching for something else?</p>
+    <p>Oops, it seems we couldn't find any myths related to your search. Would you like to try searching for something else?</p>
     <br>
     <a href="{{ url_for('main.search') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; text-decoration: none;">
         <h2 style="margin: 0;">Start a New Search</h2>
     </a>
-        {% endif %}
+    {% endif %}
+</div>
 {% endblock %}
+
+
+
+
+

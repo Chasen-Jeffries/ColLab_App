@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <h1 class="title has-text-centered has-text-white">Welcome to Asgard's Great North's Saga Weaver</h1>
+                {% if posts %}
+                    {% for post in posts %}
+                        <a href="{{ url_for('main.post', post_id=post['id']) }}" class="post-link">
+                            <div class="post">
+                                <h4 class="subtitle has-text-white">{{ Myth['title'] }}</h4>
+                                <span class="tag is-primary">{{ Myth['created'] }}</span>
+                                <a href="{{ url_for('main.edit', id=post['id']) }}" class="tag is-warning">Edit</a>
+                            </div>
+                        </a>
+                        <hr class="post-divider">
+                    {% endfor %}
+                {% else %}
+                    <p class="has-text-white">No Myths found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

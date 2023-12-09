@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{{ url_for('main.search_results') }}" method="GET" style="text-align: center; margin-top: 20px;">
+    <input type="text" name="query" placeholder="Search..." style="padding: 10px; width: 60%; border: 1px solid #ccc; border-radius: 5px;">
+    <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px;">Search</button>
+</form>
+{% endblock %}

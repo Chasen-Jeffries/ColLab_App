@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is Asgard's Great North's Saga Weaver">
+    <meta name="ColLab" content="Great North's Saga Weaver not only creates stories and images with cultural accuracy but allows you to expand upon the Norse Mythology">
+    <title>Great North's Saga Weaver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .navbar-item.is-active .navbar-link,
+        .navbar-item.is-active .dropdown-item {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar-item.has-dropdown:hover .navbar-link,
+        .navbar-item.has-dropdown:focus .navbar-link {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar-item.has-dropdown:hover .navbar-dropdown,
+        .navbar-item.has-dropdown:focus .navbar-dropdown {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar-item.has-dropdown .navbar-dropdown {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .navbar-item.has-dropdown .dropdown-item {
+            color: #333;
+        }
+        
+        .main-title {
+            font-size: 3.5rem; 
+            text-align: center;
+            margin-top: 0vh; 
+            color: #666; 
+            font-weight: bold;
+            
+        .navbar-item {
+            margin-right: 10px;
+        }
+
+        .navbar-item:last-child {
+            margin-right: 0;
+        }
+        
+        .post-link {
+            text-decoration: none;
+        }
+
+        .post {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .post:hover {
+            background-color: #ececec;
+        }
+
+        .post-divider {
+            border-color: #d3d3d3;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+        font-weight: normal; /* Add this line to unbold the subtitle */
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="hero is-black is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-start">
+                            
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="{{ url_for('main.about') }}" class="navbar-item">
+                                About
+                            </a>
+                            <a href="{{ url_for('main.search') }}" class="navbar-item">
+                                Myth Search
+                            </a>    
+                            
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    Norse Gods and Goddesses
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item">
+                                        Norse Gods and Goddesses
+                                    </a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic1') }}" class="navbar-item">Odin</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic2') }}" class="navbar-item">Thor</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic3') }}" class="navbar-item">Loki</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic4') }}" class="navbar-item">Njord</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic5') }}" class="navbar-item">Vili & Ve</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic6') }}" class="navbar-item">Fjorgyn</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic7') }}" class="navbar-item">Freyja</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic8') }}" class="navbar-item">Frigg</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic9') }}" class="navbar-item">Hel</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">Sif</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">Ragnar Lothbrok</a>
+                                    <a href="{{ url_for('research.research_postings', topic='topic10') }}" class="navbar-item">King Harald Hardrada</a>
+                                    <!-- Add more mythology topics as needed -->
+                                </div>
+                            </div>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link">
+                                    Myths
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a href="{{ url_for('main.create') }}" class="navbar-item">Weave New Myth</a>
+                                    <a href="{{ url_for('research.research_postings') }}" class="navbar-item">All Myths</a>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="navbar-end">
+                            {% if current_user.is_authenticated %}
+                                <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link has-text-white">
+                                        Valorous Heroine & Hero - Account
+                                    </a>
+                                    <div class="navbar-dropdown">
+                                        <a href="{{ url_for('main.profile') }}" class="navbar-item dropdown-item has-text-white">
+                                            Profile
+                                        </a>
+                                        <a href="{{ url_for('main.create') }}" class="navbar-item dropdown-item has-text-white">
+                                            Weave New Myth
+                                        </a>
+                                        <a href="{{ url_for('research.research_postings') }}" class="navbar-item dropdown-item has-text-white">
+                                            All Myths
+                                        </a>
+                                        <a href="{{ url_for('main.edit', id=1) }}" class="navbar-item dropdown-item has-text-white">
+                                            Edit Myth
+                                        </a>
+                                        <hr class="navbar-divider">
+                                        <a href="{{ url_for('auth.logout') }}" class="navbar-item dropdown-item has-text-white">
+                                            Logout
+                                        </a>
+                                    </div>
+                                </div>
+
+                            {% else %}
+                                <div class="navbar-item">
+                                    <div class="buttons">
+                                        <a href="{{ url_for('auth.login') }}" class="button is-primary">
+                                            Login
+                                        </a>
+                                        <a href="{{ url_for('auth.signup') }}" class="button is-light">
+                                            Sign Up
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+            <h2 class="title main-title">Great North's Saga Weaver</h2>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
